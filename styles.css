@@ -17,12 +17,15 @@ html {
 #header-left {
   display: inline-flex;
   align-items: center;
-  flex-grow: 1;
+  margin-right: 0.5em;
+  flex-grow: 1; /* added property */
 }
 
 #header-right {
   display: inline-flex;
   align-items: center;
+  margin-left: auto; /* changed property */
+  flex-grow: 1;
 }
 
 #header-img {
@@ -54,21 +57,15 @@ html {
 }
 
 #hero-desc {
-  background-color: #B46060;
-  color: #FFBF9B;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-left: -100;
-  margin-right: -100;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   font-family: Montserrat, sans-serif;
+  color: #4D4D4D;
   text-align: center;
 }
 
 #hero {
-  padding: 50px;
+  padding: 100px;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -79,6 +76,7 @@ nav {
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
+  margin-right: 25px;
 }
 
 nav a {
@@ -96,6 +94,11 @@ nav a {
   padding: 10px 20px;
 }
 
+#nav-bar {
+  position: fixed;
+  right: 0;
+}
+
 .navbar a {
   color: #4D4D4D;
   text-decoration: none;
@@ -109,6 +112,20 @@ nav a {
 
 .nav-bar ul li:not(:last-child) {
   border-right: 1px solid #ccc;
+}
+
+#hero-desc {
+  background-color: #B46060;
+  color: #FFBF9B;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-left: -100;
+  margin-right: -100;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Montserrat, sans-serif;
+  text-align: center;
 }
 
 h4 {
@@ -128,6 +145,7 @@ input[type="email"] {
   padding: 10px;
   font-size: 16px;
   width: 100%;
+  margin: 0px;
 }
 
 input[type="email"]:focus {
@@ -144,15 +162,18 @@ input[type="submit"] {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: -100px;
   }
+
+.submit {
+  text-align: center;
+}
 
 .desc {
   background-color: #FFBF9B;
   color: #FFBF9B;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding: 10px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-right: 300px;
@@ -167,7 +188,6 @@ h2 {
   color: #4D4D4D;
   font-size: 30px;
   padding-left: 100px;
-  margin-top: 20px;
 }
 
 p {
@@ -175,7 +195,6 @@ p {
   font-size: 20px;
   color: #4D4D4D;
   padding-right: 100px;
-  margin-bottom: 20px;
 }
 
 .form-group {
@@ -308,12 +327,35 @@ footer span {
   text-align: right;
 }
 
-@media only screen and (max-width: 600px) {
-  .my-class {
-    font-size: 16px;
+@media only screen and (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
   }
-}
-
-#features {
-  padding-top: 30px;
+  
+  #header-left, #header-right {
+    margin: 0;
+    flex-grow: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  #company-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  #nav-bar {
+    display: none;
+  }
+  
+  #hero {
+    padding: 50px;
+  }
+  
+  .product {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
